@@ -5,8 +5,8 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css"
-        integrity="sha384-Kq/qtF0GiQ2/6OINtNcEzBKp7UVvVXB2xAR2HXOT/D+Qw8+Cx2hfokpqKtPEx0b6" crossorigin="anonymous">
+          href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css"
+          integrity="sha384-Kq/qtF0GiQ2/6OINtNcEzBKp7UVvVXB2xAR2HXOT/D+Qw8+Cx2hfokpqKtPEx0b6" crossorigin="anonymous">
 
     <style>
         html {
@@ -29,46 +29,19 @@
             height: 100%;
             width: 100%;
         }
+
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"
-        integrity="sha384-54FxFm5+OJnD+IWvK/LQO8Is9GGG3QzyyMPoB69QyvWz1lwLpI9m5y2dWzL8qUMs"
-        crossorigin="anonymous"></script>
+            integrity="sha384-54FxFm5+OJnD+IWvK/LQO8Is9GGG3QzyyMPoB69QyvWz1lwLpI9m5y2dWzL8qUMs"
+            crossorigin="anonymous"></script>
 
     <title>OpenLayers + mapant.fi</title>
 </head>
 
 <body>
     <div id="map" class="map"></div>
-    <script type="text/javascript">
-        // EPSG:3857: Web Mercator, OpenStreetMap, Bing Maps or Google Maps.
-        const pWebM = 'EPSG:3857';
-
-        // EPSG:4326: World Geodetic System 1984
-        const pWGS = 'EPSG:4326';
-
-        // [lon, lat]
-        const pisteWGS = [23.966000278, 61.594497778];
-        const pisteWebM = ol.proj.transform(pisteWGS, pWGS, pWebM)
-
-        const map = new ol.Map({
-            target: 'map',
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.XYZ({
-                        projection: pWebM,
-                        url: 'https://wmts.mapant.fi/wmts_EPSG3857.php?z={z}&x={x}&y={y}',
-                        crossOrigin: 'anonymous',
-                        attributions: '<a href="http://www.maanmittauslaitos.fi/en/digituotteet/laser-scanning-data" target="_blank">Laser scanning</a> and <a href="http://www.maanmittauslaitos.fi/en/digituotteet/topographic-database" target="_blank">topographic</a> data provided by the <a href="http://www.maanmittauslaitos.fi/en" target="_blank">National Land Survey of Finland</a> under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons license</a>.'
-                    })
-                })
-            ],
-            view: new ol.View({
-                center: pisteWebM,
-                zoom: 15
-            })
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
